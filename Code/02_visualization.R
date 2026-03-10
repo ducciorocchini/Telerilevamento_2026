@@ -7,6 +7,10 @@ library(imageRy)
 library(devtools)
 # install_github("ducciorocchini/imageRy")
 library(viridis)
+library(ggplot2)
+# install.packages("patchwork")
+library(patchwork)
+library(GGally)
 
 im.list()
 
@@ -90,7 +94,70 @@ plot(sentinel[[2]])
 # stack
 # sist rife
 
+b2 <- im.import("sentinel.dolomites.b2.tif")
+b3 <- im.import("sentinel.dolomites.b3.tif")
+b4 <- im.import("sentinel.dolomites.b4.tif")
+b8 <- im.import("sentinel.dolomites.b8.tif")
 
+p1 <- im.ggplot(b8)
+p2 <- im.ggplot(b4)
+
+p1 + p2
+
+# Multiframe:
+# 1. par(mfrow=c(1,2))
+# 2. im.multiframe(1,2)
+# 3. stack
+# 4. ggplot2 patchwork
+
+# RGB plotting
+sentinel <- c(b2, b3, b4, b8)
+
+# 1=b2 blue
+# 2=b3 green
+# 3=b4 red
+# 4=b8 nir
+
+# 3 filters and 4 bands
+im.plotRGB(sentinel, r=3, g=2, b=1) # natural colors 
+im.plotRGB(sentinel, r=4, g=3, b=2) # false colors
+
+im.multiframe(1,2)
+# 3 filters and 4 bands
+im.plotRGB(sentinel, r=3, g=2, b=1) # natural colors 
+im.plotRGB(sentinel, r=4, g=3, b=2) # false colors
+
+plot(sentinel[[4]])
+im.plotRGB(sentinel, r=4, g=3, b=2) # false colors
+
+# NIR on green
+im.plotRGB(sentinel, r=3, g=4, b=2) # false colors
+
+# Exercise: NIR on top of the blue component of the RGB scheme
+im.plotRGB(sentinel, r=3, g=2, b=4) # false colors
+
+# Plot the four manners of RGB in a single multiframe
+im.multiframe(2,2)
+im.plotRGB(sentinel, r=3, g=2, b=1) # natural colors 
+im.plotRGB(sentinel, r=4, g=3, b=2) # false colors
+im.plotRGB(sentinel, r=3, g=4, b=2) # false colors
+im.plotRGB(sentinel, r=3, g=2, b=4) # false colors
+
+# Positioning of visible bands
+im.multiframe(1,2)
+im.plotRGB(sentinel, r=4, g=3, b=2) # false colors
+im.plotRGB(sentinel, r=4, g=2, b=3) # false colors
+
+pairs(sentinel)
+ggpairs(sentinel)
+
+# simplifying the function
+im.plotRGB(sentinel, 4, 2, 3) # false colors
+
+# plotRGB() from terra
+plotRGB(sentinel, 4, 2, 3) 
+plotRGB(sentinel, 4, 2, 3, stretch="lin") 
+plotRGB(sentinel, 4, 2, 3, stretch="hist") 
 
 
 
