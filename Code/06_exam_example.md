@@ -59,6 +59,16 @@ The output will look like:
 
 ![inferno](https://github.com/user-attachments/assets/9bab43f4-5374-4e4d-9115-25a1c234fea6)
 
+## Correlation of bands
 
+Since the RGB is composed by visible bands, a high correlation is expected:
+
+``` r
+pairs(dust)
+```
+
+This is also graphically apparent:
+
+![pairsout](https://github.com/user-attachments/assets/c16c84dd-dc4f-42f9-be48-75a9d3b17a4e)
 
 
