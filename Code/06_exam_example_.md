@@ -1,10 +1,10 @@
-# Ice spread: questo è il titolo della presentazione da fare all'esame
+# Ice spread: questo è il titolo della presentazione da fare all'esame 🧊
 
 <img width="275" height="183" alt="download" src="https://github.com/user-attachments/assets/2faf1aeb-6d5c-4113-947c-f1f5425a5d30" />
 
 In questa riga scrivo l'intro alle mie analisi.
 
-## Immagine satellitare da internet: dati di input
+## Immagine satellitare da internet: dati di input 📡
 
 L'immagine è stata scaricata da Earth Observatory:
 https://science.nasa.gov/earth/earth-observatory/contours-of-the-james-bay-lowlands/
@@ -31,7 +31,7 @@ Dati importati via `rast()`:
 ice <- rast("ISS074-E-417243.jpg")
 ```
 
-## Plottaggio delle singole bande
+## Plottaggio delle singole bande 🖼️
 
 Le singole bande sono state plottate usando un ultiframe:
 ``` r
