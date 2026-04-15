@@ -6,7 +6,7 @@ library(viridis)
 library(ggplot2)
 library(patchwork)
 
-setwd("~/Desktop/drone_teleril")
+setwd("~/Desktop/")
 # c://blablabla/lknlnln
 
 # get the directory
@@ -84,5 +84,15 @@ dev.off()
 # import from Git
 # link to the data
 nirgit <- rast("https://raw.githubusercontent.com/ducciorocchini/Telerilevamento_2026/main/Drone/DJI_20260331174728_0001_MS_NIR.TIF")
+
+#### Importing satellite data
+
+getwd()
+
+list.files()
+
+sat <- rast("ISS074-E-417243.jpg")
+sat <- flip(sat)
+plot(sat)
 
 
