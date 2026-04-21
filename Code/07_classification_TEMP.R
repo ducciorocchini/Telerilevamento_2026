@@ -1,4 +1,5 @@
 # Classifying remotely sensed data
+# https://zenodo.org/records/19660762
 
 library(terra)
 library(imageRy)
