@@ -86,5 +86,18 @@ tabout <- data.frame(
   )
 
 
+# Using the ggplot2 package for the final graph
+p1 <- ggplot(tabout, aes(x=class, y=perc1992, color=class)) + 
+      geom_bar(stat="identity", fill="white") +
+      ylim(c(0,100)) +
+      theme(legend.position = "none")
+
+# Exercise: make the same plot for 2006
+p2 <- ggplot(tabout, aes(x=class, y=perc2006, color=class)) + 
+      geom_bar(stat="identity", fill="white") +
+      ylim(c(0,100))
+
+p1 + p2
+p1 / p2
 
 
