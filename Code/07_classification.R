@@ -2,6 +2,8 @@
 
 library(terra)
 library(imageRy)
+library(ggplot2)
+library(patchwork)
 
 # set wd
 setwd("~/Downloads")
@@ -84,3 +86,23 @@ tabout <- data.frame(
   perc1992=c(83, 17),
   perc2006=c(45, 55)
   )
+
+ggplot(tabout, aes(x=class, y=perc1992, color=class)) + # structure
+  geom_bar(stat="identity", fill="white") # bar plot
+  
+# Exercise: plot the bars of 2006
+ggplot(tabout, aes(x=class, y=perc2006, color=class)) + # structure
+  geom_bar(stat="identity", fill="white") # bar plot
+  
+# Using patchwork!
+p1 <- ggplot(tabout, aes(x=class, y=perc1992, color=class)) + # structure
+  geom_bar(stat="identity", fill="white") + # bar plot 
+  ylim(c(0,100)) + # limits
+  theme(legend.position="none")  # removing legend
+
+p2 <- ggplot(tabout, aes(x=class, y=perc2006, color=class)) + # structure
+  geom_bar(stat="identity", fill="white") + # bar plot
+  ylim(c(0,100)) + # limits
+  theme(legend.position="none")  # removing legend
+
+p1 + p2
