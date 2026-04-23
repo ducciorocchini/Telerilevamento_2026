@@ -1,3 +1,5 @@
+# install.packages("qrcode")
+
 library(qrcode)
  
 url <- "https://github.com/ducciorocchini"
