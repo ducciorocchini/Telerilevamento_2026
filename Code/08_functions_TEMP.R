@@ -26,13 +26,17 @@ positivo <- function(x) {
     print("Lo zero è zero.")}
   }
 
-for (i in 1:5) {
-  print(i)
+loop <- function() {
+  for (i in 1:5) {
+    return(i)
+  }
 }
 
+loop2 <- function() {
 for (i in 1:5) {
   result <- i * 2
   print(result)
+  }
 }
 
 
