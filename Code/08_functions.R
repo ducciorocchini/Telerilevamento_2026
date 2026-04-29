@@ -66,4 +66,6 @@ loop3 <- function(){
     }
   }
 
-
+sink("data.txt")
+loop3()
+sink()
