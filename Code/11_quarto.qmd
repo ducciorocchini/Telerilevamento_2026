@@ -1,6 +1,9 @@
 ---
-title: "Untitled"
-format: revealjs
+title: "Decoding biodiversity through spatio-temporal spectral variations"
+author: Duccio Rocchini
+format:
+  revealjs:
+    self-contained: true
 editor: visual
 ---
 
