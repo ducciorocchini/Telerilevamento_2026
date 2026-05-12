@@ -84,3 +84,12 @@ Un potenziale indice riguarda la sottrazione delle prime due bande:
 index <- blett[[1]] - blett[[2]]
 plot(index)
 ```
+
+## inserire un'immagine esterna
+
+## Why space, time, and spectra matter
+
+::: {style="text-align: center;"}
+![](percorso/era.png){width="80%" align="center"}
+:::
+
